@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Board from "./pages/Board";
 import TicketDetail from "./pages/TicketDetail";
+import './pages/Board.css';
 
 function App() {
   return (

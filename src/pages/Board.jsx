@@ -1,31 +1,29 @@
 // src/pages/Board.jsx
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { loadTickets } from '../lib/api';
-import { calculateSLAUrgency, getPriorityInfo, getStatusInfo } from '../lib/sla';
-import '../App.css';
+import { getTickets } from '../lib/api';
+import { slaStatus, formatRemaining, msRemaining } from '../lib/sla';
+import './Board.css';
 
 const Board = () => {
-  // State for tickets and loading
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
-  // State for filters (your responsibility)
   const [filters, setFilters] = useState({
     search: '',
     status: 'all',
     priority: 'all',
-    sortBy: 'urgency' // urgency sorting
+    sortBy: 'urgency'
   });
 
-  // Load tickets on component mount
+  // Load tickets using the existing getTickets function
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-        const data = await loadTickets();
+        const data = await getTickets();
         setTickets(data);
         setLoading(false);
+      // eslint-disable-next-line no-unused-vars
       } catch (err) {
         setError('Failed to load tickets');
         setLoading(false);
@@ -34,7 +32,23 @@ const Board = () => {
     fetchTickets();
   }, []);
 
-  // Filter and sort tickets (your main logic)
+  // Get urgency score for sorting
+  const getUrgencyScore = (ticket) => {
+    // eslint-disable-next-line react-hooks/purity
+    const now = Date.now();
+    const remaining = msRemaining(ticket, now);
+    const slaMilliseconds = ticket.priority === 'P1' ? 3600000 :
+                           ticket.priority === 'P2' ? 14400000 :
+                           ticket.priority === 'P3' ? 86400000 :
+                           ticket.priority === 'P4' ? 259200000 : 86400000;
+    
+    if (remaining < 0) return 1;
+    if (remaining < slaMilliseconds * 0.25) return 0.8;
+    const timePassed = slaMilliseconds - remaining;
+    return timePassed / slaMilliseconds;
+  };
+
+  // Filter and sort tickets
   const filteredTickets = useMemo(() => {
     let result = [...tickets];
 
@@ -59,12 +73,12 @@ const Board = () => {
       result = result.filter(ticket => ticket.priority === filters.priority);
     }
 
-    // Urgency sorting (your responsibility)
+    // Sorting
     if (filters.sortBy === 'urgency') {
       result.sort((a, b) => {
-        const urgencyA = calculateSLAUrgency(a);
-        const urgencyB = calculateSLAUrgency(b);
-        return urgencyB.urgency - urgencyA.urgency;
+        const scoreA = getUrgencyScore(a);
+        const scoreB = getUrgencyScore(b);
+        return scoreB - scoreA;
       });
     } else if (filters.sortBy === 'created') {
       result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
@@ -76,7 +90,28 @@ const Board = () => {
     return result;
   }, [tickets, filters]);
 
-  // Summary information (your responsibility)
+  // Get SLA display info for a ticket
+  const getSLADisplay = (ticket) => {
+    // eslint-disable-next-line react-hooks/purity
+    const now = Date.now();
+    const status = slaStatus(ticket, now);
+    const remaining = msRemaining(ticket, now);
+    const formatted = formatRemaining(remaining);
+    
+    const slaMilliseconds = ticket.priority === 'P1' ? 3600000 :
+                           ticket.priority === 'P2' ? 14400000 :
+                           ticket.priority === 'P3' ? 86400000 :
+                           ticket.priority === 'P4' ? 259200000 : 86400000;
+    
+    let percentage = 0;
+    if (remaining > 0) {
+      percentage = (remaining / slaMilliseconds) * 100;
+    }
+    
+    return { status, formatted, percentage: Math.min(percentage, 100) };
+  };
+
+  // Calculate summary statistics
   const stats = {
     total: tickets.length,
     open: tickets.filter(t => t.status === 'open').length,
@@ -88,8 +123,13 @@ const Board = () => {
     p3: tickets.filter(t => t.priority === 'P3').length,
     p4: tickets.filter(t => t.priority === 'P4').length,
     unassigned: tickets.filter(t => t.assignee === null).length,
+    // eslint-disable-next-line react-hooks/purity
+    breached: tickets.filter(t => slaStatus(t, Date.now()) === 'breached').length,
+    // eslint-disable-next-line react-hooks/purity
+    atRisk: tickets.filter(t => slaStatus(t, Date.now()) === 'at-risk').length,
   };
 
+  // Loading state
   if (loading) return (
     <div className="loading-container">
       <div className="spinner"></div>
@@ -97,6 +137,7 @@ const Board = () => {
     </div>
   );
 
+  // Error state
   if (error) return (
     <div className="error-container">
       <span className="error-icon">⚠️</span>
@@ -104,12 +145,36 @@ const Board = () => {
     </div>
   );
 
+  // Priority colors
+  const priorityColors = {
+    'P1': '#dc3545',
+    'P2': '#fd7e14',
+    'P3': '#ffc107',
+    'P4': '#28a745'
+  };
+  
+  // Status colors
+  const statusColors = {
+    'open': '#007bff',
+    'in-progress': '#ffc107',
+    'resolved': '#28a745',
+    'closed': '#6c757d'
+  };
+  
+  // SLA status colors
+  const slaColors = {
+    'met': '#28a745',
+    'ok': '#007bff',
+    'at-risk': '#ffc107',
+    'breached': '#dc3545'
+  };
+
   return (
     <div className="board-container">
-      {/* Summary Information - Your Responsibility */}
+      {/* Summary Cards - Your Responsibility */}
       <div className="summary-grid">
         <div className="summary-card">
-          <span className="summary-label">Total Tickets</span>
+          <span className="summary-label">Total</span>
           <span className="summary-value">{stats.total}</span>
         </div>
         <div className="summary-card status-open">
@@ -125,20 +190,28 @@ const Board = () => {
           <span className="summary-value">{stats.resolved}</span>
         </div>
         <div className="summary-card priority-p1">
-          <span className="summary-label">P1 Critical</span>
+          <span className="summary-label">P1</span>
           <span className="summary-value">{stats.p1}</span>
         </div>
         <div className="summary-card priority-p2">
-          <span className="summary-label">P2 High</span>
+          <span className="summary-label">P2</span>
           <span className="summary-value">{stats.p2}</span>
         </div>
         <div className="summary-card priority-p3">
-          <span className="summary-label">P3 Medium</span>
+          <span className="summary-label">P3</span>
           <span className="summary-value">{stats.p3}</span>
         </div>
         <div className="summary-card priority-p4">
-          <span className="summary-label">P4 Low</span>
+          <span className="summary-label">P4</span>
           <span className="summary-value">{stats.p4}</span>
+        </div>
+        <div className="summary-card sla-breached">
+          <span className="summary-label">⚠️ Breached</span>
+          <span className="summary-value">{stats.breached}</span>
+        </div>
+        <div className="summary-card sla-atrisk">
+          <span className="summary-label">⚡ At Risk</span>
+          <span className="summary-value">{stats.atRisk}</span>
         </div>
         <div className="summary-card assignment">
           <span className="summary-label">Unassigned</span>
@@ -150,7 +223,7 @@ const Board = () => {
       <div className="filters-container">
         <input
           type="text"
-          placeholder="Search tickets..."
+          placeholder="Search tickets by ID, subject, requester..."
           value={filters.search}
           onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
           className="search-input"
@@ -194,7 +267,7 @@ const Board = () => {
           <span>Ticket</span>
           <span>Priority</span>
           <span>Status</span>
-          <span>SLA Urgency</span>
+          <span>SLA</span>
           <span>Assignee</span>
           <span>Action</span>
         </div>
@@ -205,10 +278,7 @@ const Board = () => {
           </div>
         ) : (
           filteredTickets.map(ticket => {
-            // Display SLA urgency information - Your Responsibility
-            const sla = calculateSLAUrgency(ticket);
-            const priorityInfo = getPriorityInfo(ticket.priority);
-            const statusInfo = getStatusInfo(ticket.status);
+            const slaInfo = getSLADisplay(ticket);
             
             return (
               <div key={ticket.id} className={`ticket-row priority-${ticket.priority}`}>
@@ -220,22 +290,33 @@ const Board = () => {
                   </div>
                 </div>
                 
-                <span className="priority-badge" style={{ background: priorityInfo.color }}>
+                <span className="priority-badge" style={{ background: priorityColors[ticket.priority] }}>
                   {ticket.priority}
                 </span>
                 
-                <span className="status-badge" style={{ background: statusInfo.color }}>
+                <span className="status-badge" style={{ background: statusColors[ticket.status] }}>
                   {ticket.status}
                 </span>
                 
-                {/* SLA Urgency Display - Your Responsibility */}
+                {/* SLA Display - Your Responsibility */}
                 <div className="sla-display">
-                  <div className={`sla-bar ${sla.status}`}>
-                    <div className="sla-fill" style={{ width: `${sla.percentage}%` }}></div>
+                  <div className={`sla-bar ${slaInfo.status}`}>
+                    <div 
+                      className="sla-fill" 
+                      style={{ 
+                        width: `${slaInfo.percentage}%`,
+                        background: slaColors[slaInfo.status]
+                      }}
+                    />
                   </div>
-                  <span className={`sla-text ${sla.status}`}>
-                    {sla.percentage}% {sla.status === 'critical' && '⚠️'}
-                  </span>
+                  <div className="sla-info">
+                    <span className={`sla-status ${slaInfo.status}`}>
+                      {slaInfo.status === 'breached' && '⚠️ '}
+                      {slaInfo.status === 'at-risk' && '⚡ '}
+                      {slaInfo.status.toUpperCase()}
+                    </span>
+                    <span className="sla-time">{slaInfo.formatted}</span>
+                  </div>
                 </div>
                 
                 <span className="assignee">{ticket.assignee || 'Unassigned'}</span>
