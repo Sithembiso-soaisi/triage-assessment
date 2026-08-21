@@ -1,0 +1,111 @@
+.ticket-detail {
+  --ink: #172033;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --surface: #ffffff;
+  --canvas: #f7f9fc;
+  --brand: #4f46e5;
+  --brand-dark: #4338ca;
+  max-width: 980px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  color: var(--ink);
+  text-align: left;
+}
+
+.ticket-detail-state {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 32px;
+  color: #64748b;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: var(--brand);
+  font-size: 0.9rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.back-link:hover { color: var(--brand-dark); text-decoration: underline; }
+.back-link:focus-visible, .note-form button:focus-visible, .status-field select:focus-visible, .note-form textarea:focus-visible { outline: 3px solid #c7d2fe; outline-offset: 2px; }
+
+.ticket-detail__header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  padding: 24px 26px;
+  overflow: hidden;
+  background: linear-gradient(120deg, #ffffff 0%, #f4f5ff 100%);
+  border: 1px solid #e0e7ff;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(30, 41, 59, 0.07);
+}
+
+.ticket-detail__header::after {
+  position: absolute;
+  right: -45px;
+  bottom: -90px;
+  width: 190px;
+  height: 190px;
+  content: "";
+  background: #e0e7ff;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.ticket-detail__header > * { position: relative; z-index: 1; }
+.ticket-detail h1 { max-width: 750px; margin: 7px 0 0; color: #172033; font-size: clamp(2rem, 4.4vw, 3.15rem); font-weight: 760; letter-spacing: -0.045em; line-height: 1.08; }
+.ticket-detail h2 { margin: 0; color: #172033; font-size: 1.12rem; letter-spacing: -0.02em; }
+.ticket-detail__id { margin: 0; color: #6366f1; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.ticket-detail__badges { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; min-width: max-content; }
+.detail-badge { display: inline-flex; align-items: center; min-height: 29px; padding: 0 11px; color: #fff; border: 1px solid rgba(255, 255, 255, 0.32); border-radius: 999px; box-shadow: 0 2px 4px rgba(15, 23, 42, 0.12); font-size: 0.73rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.priority-P1 { background: #dc3545; }.priority-P2 { background: #fd7e14; }.priority-P3 { background: #ffc107; color: #342b00; }.priority-P4 { background: #28a745; }.status-open { background: #007bff; }.status-in-progress { background: #ffc107; color: #342b00; }.status-resolved { background: #28a745; }.status-closed { background: #6c757d; }
+
+.ticket-detail__grid { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(265px, 0.8fr); gap: 16px; margin-bottom: 16px; }
+.detail-card { padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 8px 22px rgba(30, 41, 59, 0.045); }
+.detail-card--description { position: relative; overflow: hidden; }
+.detail-card--description::before { display: block; width: 36px; height: 4px; margin-bottom: 13px; content: ""; background: #6366f1; border-radius: 99px; }
+.detail-card--description p { max-width: 68ch; margin: 13px 0 0; color: #475569; font-size: 0.95rem; line-height: 1.64; }
+
+.ticket-meta { margin: -4px 0 18px; }
+.ticket-meta div { display: grid; gap: 5px; padding: 10px 0; border-bottom: 1px solid #edf2f7; }
+.ticket-meta div:last-child { border-bottom: 0; }
+.ticket-meta dt { color: #94a3b8; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.ticket-meta dd { margin: 0; color: #334155; font-size: 0.94rem; font-weight: 650; }
+
+.status-field, .note-form label { display: grid; gap: 8px; color: #334155; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.02em; }
+.status-field select, .note-form textarea { width: 100%; box-sizing: border-box; color: #172033; background: #fff; border: 1px solid #cbd5e1; border-radius: 9px; font: inherit; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.status-field select { padding: 10px 12px; cursor: pointer; }
+.status-field select:focus, .note-form textarea:focus { border-color: #6366f1; box-shadow: 0 0 0 4px #e0e7ff; outline: 0; }
+
+.notes-section { margin-top: 16px; padding: 24px; }
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.section-heading p { margin: 0; color: #94a3b8; font-size: 0.82rem; font-weight: 700; }
+.note-form { display: grid; gap: 10px; margin-top: 20px; padding: 20px; background: var(--canvas); border: 1px solid #e9edf5; border-radius: 12px; }
+.note-form textarea { min-height: 108px; padding: 12px 13px; line-height: 1.55; resize: vertical; }
+.note-form textarea::placeholder { color: #94a3b8; }
+.note-form button { justify-self: start; padding: 10px 16px; color: #fff; background: var(--brand); border: 0; border-radius: 8px; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2); cursor: pointer; font: inherit; font-size: 0.88rem; font-weight: 800; transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease; }
+.note-form button:hover { background: var(--brand-dark); box-shadow: 0 7px 14px rgba(79, 70, 229, 0.28); transform: translateY(-1px); }
+.form-error { margin: 0; color: #b91c1c; font-size: 0.84rem; font-weight: 650; }
+
+.notes-list { margin-top: 20px; }
+.note { position: relative; padding: 18px 19px; overflow: hidden; background: #f8fafc; border: 1px solid #e6ebf2; border-radius: 11px; }
+.note::before { position: absolute; top: 0; right: 0; left: 0; height: 3px; content: ""; background: linear-gradient(90deg, #6366f1, #a5b4fc); }
+.note + .note { margin-top: 14px; }
+.note div { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.note strong { color: #253047; font-size: 0.92rem; }.note time { color: #94a3b8; font-size: 0.77rem; white-space: nowrap; }.note p, .empty-notes { margin: 7px 0 0; color: #536174; line-height: 1.6; }.empty-notes { padding: 28px 0 4px; color: #94a3b8; text-align: center; }
+
+@media (max-width: 720px) {
+  .ticket-detail { padding: 24px 16px 44px; }.back-link { margin-bottom: 18px; }.ticket-detail__header { flex-direction: column; gap: 19px; padding: 24px 21px; border-radius: 14px; }.ticket-detail h1 { font-size: 2rem; }.ticket-detail__badges { justify-content: flex-start; }.ticket-detail__grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 16px; }.detail-card, .notes-section { padding: 21px; border-radius: 13px; }.notes-section { margin-top: 16px; }.note-form { padding: 16px; }.note div { flex-direction: column; align-items: flex-start; gap: 4px; }.note time { white-space: normal; }
+}
