@@ -285,7 +285,7 @@ const Board = () => {
                 <div className="ticket-info">
                   <span className="ticket-id">{ticket.id}</span>
                   <div className="ticket-subject">
-                    <Link to={`/ticket/${ticket.id}`}>{ticket.subject}</Link>
+                    <Link to={`/tickets/${ticket.id}`}>{ticket.subject}</Link>
                     <span className="ticket-requester">by {ticket.requester}</span>
                   </div>
                 </div>
@@ -320,7 +320,7 @@ const Board = () => {
                 </div>
                 
                 <span className="assignee">{ticket.assignee || 'Unassigned'}</span>
-                <Link to={`/ticket/${ticket.id}`} className="view-btn">View</Link>
+                <Link to={`/tickets/${ticket.id}`} className="view-btn">View</Link>
               </div>
             );
           })
