@@ -70,7 +70,7 @@
 
 .ticket-detail__badges { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; min-width: max-content; }
 .detail-badge { display: inline-flex; align-items: center; min-height: 29px; padding: 0 11px; color: #fff; border: 1px solid rgba(255, 255, 255, 0.32); border-radius: 999px; box-shadow: 0 2px 4px rgba(15, 23, 42, 0.12); font-size: 0.73rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
-.priority-P1 { background: #dc3545; }.priority-P2 { background: #fd7e14; }.priority-P3 { background: #ffc107; color: #342b00; }.priority-P4 { background: #28a745; }.status-open { background: #007bff; }.status-in-progress { background: #ffc107; color: #342b00; }.status-resolved { background: #28a745; }.status-closed { background: #6c757d; }
+.detail-badge.priority-P1 { background: #dc3545; }.detail-badge.priority-P2 { background: #fd7e14; }.detail-badge.priority-P3 { background: #ffc107; color: #342b00; }.detail-badge.priority-P4 { background: #28a745; }.detail-badge.status-open { background: #007bff; }.detail-badge.status-in-progress { background: #ffc107; color: #342b00; }.detail-badge.status-resolved { background: #28a745; }.detail-badge.status-closed { background: #6c757d; }
 
 .ticket-detail__grid { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(265px, 0.8fr); gap: 16px; margin-bottom: 16px; }
 .detail-card { padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 8px 22px rgba(30, 41, 59, 0.045); }
