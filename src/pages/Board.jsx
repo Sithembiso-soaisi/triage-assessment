@@ -163,10 +163,10 @@ const Board = () => {
   
   // SLA status colors
   const slaColors = {
-    'met': '#28a745',
-    'ok': '#007bff',
+    met: '#28a745',
+    ok: '#007bff',
     'at-risk': '#ffc107',
-    'breached': '#dc3545'
+    breached: '#dc3545',
   };
 
   return (
