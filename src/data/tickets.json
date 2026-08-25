@@ -1,709 +1,749 @@
 {
-  "generatedAt": "2026-08-18T09:00:00.000Z",
-  "team": [
-    "Ada Nwosu",
-    "Tunde Bello",
-    "Grace Mensah",
-    "Ife Adeyemi"
-  ],
-  "tickets": [
-    {
-      "id": "TCK-1008",
-      "subject": "Two-factor codes arriving several minutes late",
-      "description": "SMS codes take three to six minutes, by which point they have expired. Voice calls arrive instantly.",
-      "requester": "Ngozi Eze",
-      "priority": "P2",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-18T08:30:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1002",
-      "subject": "SSO login loop for the whole finance team",
-      "description": "Finance cannot sign in at all -- the identity provider redirects back to the login page in a loop. Eleven people blocked.",
-      "requester": "Tunde Bello",
-      "priority": "P1",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-18T08:09:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1001",
-      "subject": "Checkout returns 500 on card payment",
-      "description": "Customers on the Pro plan hit an error at the payment step. Started after this morning's deploy. Three refunds requested so far.",
-      "requester": "Ada Nwosu",
-      "priority": "P1",
-      "status": "in-progress",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-18T07:36:00.000Z",
-      "resolvedAt": null,
-      "notes": [
-        {
-          "id": "n1-1",
-          "author": "Ada Nwosu",
-          "body": "Reproduced on staging.",
-          "createdAt": "2026-08-18T08:06:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1015",
-      "subject": "Password reset link expires too quickly",
-      "description": "Links are valid for five minutes, which is not long enough for customers checking email on another device.",
-      "requester": "Bode Adekunle",
-      "priority": "P3",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-18T07:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1024",
-      "subject": "Reports page times out for large accounts",
-      "description": "Accounts with more than 50,000 records get a gateway timeout. Smaller accounts load in under a second.",
-      "requester": "Samuel Otieno",
-      "priority": "P2",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-18T06:24:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1004",
-      "subject": "Export to CSV drops the last row",
-      "description": "Any export of more than 500 records is missing the final row. Reproduced on staging with 501 records.",
-      "requester": "Ife Adeyemi",
-      "priority": "P2",
-      "status": "open",
-      "assignee": "Ife Adeyemi",
-      "createdAt": "2026-08-18T05:48:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1005",
-      "subject": "Search returns no results for hyphenated names",
-      "description": "Searching 'Ade-Kunle' returns nothing; 'Adekunle' works. Affects roughly 4% of our customer records.",
-      "requester": "Chidi Okafor",
-      "priority": "P2",
-      "status": "in-progress",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-18T05:36:00.000Z",
-      "resolvedAt": null,
-      "notes": [
-        {
-          "id": "n5-1",
-          "author": "Ada Nwosu",
-          "body": "Workaround sent to the customer while we fix it properly.",
-          "createdAt": "2026-08-18T06:06:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1009",
-      "subject": "Dashboard chart is empty on first load",
-      "description": "The revenue chart renders blank until you change the date range. Refreshing does not help; interacting does.",
-      "requester": "Samuel Otieno",
-      "priority": "P3",
-      "status": "in-progress",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-18T05:00:00.000Z",
-      "resolvedAt": null,
-      "notes": [
-        {
-          "id": "n9-1",
-          "author": "Ada Nwosu",
-          "body": "Reproduced on staging.",
-          "createdAt": "2026-08-18T05:30:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1003",
-      "subject": "Webhook deliveries silently dropped since 06:00",
-      "description": "Partner integrations report no events received. Our dashboard shows deliveries as successful, so something is failing after the send.",
-      "requester": "Grace Mensah",
-      "priority": "P2",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-18T04:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1010",
-      "subject": "Bulk import rejects valid postcodes",
-      "description": "Postcodes with a space in them are rejected as invalid. The same rows import fine without the space.",
-      "requester": "Fatima Bala",
-      "priority": "P3",
-      "status": "open",
-      "assignee": "Tunde Bello",
-      "createdAt": "2026-08-18T02:30:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1011",
-      "subject": "Timezone wrong on scheduled reports",
-      "description": "Reports scheduled for 09:00 arrive at 10:00 for users in Lagos. Suspect the scheduler is using UTC.",
-      "requester": "Emeka Obi",
-      "priority": "P3",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-18T01:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1016",
-      "subject": "Duplicate confirmation emails on signup",
-      "description": "New users receive the welcome email twice, about thirty seconds apart. Only on the self-serve signup path.",
-      "requester": "Ada Nwosu",
-      "priority": "P3",
-      "status": "open",
-      "assignee": "Ife Adeyemi",
-      "createdAt": "2026-08-18T00:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1012",
-      "subject": "API rate limit headers missing",
-      "description": "Our documentation promises X-RateLimit-Remaining but the response does not include it, so clients cannot back off.",
-      "requester": "Lerato Dlamini",
-      "priority": "P3",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-17T22:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1013",
-      "subject": "Cannot remove a user from a workspace",
-      "description": "The remove button is greyed out for users who have been invited but never signed in.",
-      "requester": "Yaw Asante",
-      "priority": "P3",
-      "status": "in-progress",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-17T20:00:00.000Z",
-      "resolvedAt": null,
-      "notes": [
-        {
-          "id": "n13-1",
-          "author": "Ada Nwosu",
-          "body": "Workaround sent to the customer while we fix it properly.",
-          "createdAt": "2026-08-17T20:30:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1017",
-      "subject": "Add a dark theme to the dashboard",
-      "description": "Several customers have asked for a dark theme, particularly the support teams who use it overnight.",
-      "requester": "Tunde Bello",
-      "priority": "P4",
-      "status": "in-progress",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-17T19:00:00.000Z",
-      "resolvedAt": null,
-      "notes": [
-        {
-          "id": "n17-1",
-          "author": "Ada Nwosu",
-          "body": "Reproduced on staging.",
-          "createdAt": "2026-08-17T19:30:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1014",
-      "subject": "Attachments over 10MB fail without a message",
-      "description": "The upload spinner runs forever. No error is shown and nothing appears in the console.",
-      "requester": "Halima Sule",
-      "priority": "P3",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-17T18:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1025",
-      "subject": "Saved filters disappear after logging out",
-      "description": "Filters are saved to the session rather than the account, so they are lost on sign-out.",
-      "requester": "Fatima Bala",
-      "priority": "P3",
-      "status": "in-progress",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-17T17:00:00.000Z",
-      "resolvedAt": null,
-      "notes": [
-        {
-          "id": "n25-1",
-          "author": "Ada Nwosu",
-          "body": "Reproduced on staging.",
-          "createdAt": "2026-08-17T17:30:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1026",
-      "subject": "Slack integration posts to the wrong channel",
-      "description": "After renaming a channel, notifications continue going to the old channel ID.",
-      "requester": "Emeka Obi",
-      "priority": "P3",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-17T15:30:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1006",
-      "subject": "Invoice PDF shows the wrong VAT total",
-      "description": "The line items are right but the total at the bottom is calculated before the discount is applied.",
-      "requester": "Zainab Yusuf",
-      "priority": "P3",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-17T13:30:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1007",
-      "subject": "Mobile app crashes when opening notifications",
-      "description": "Android only, version 4.2.1. Crash log points at a null title on notifications created before the migration.",
-      "requester": "Kwame Boateng",
-      "priority": "P3",
-      "status": "open",
-      "assignee": "Grace Mensah",
-      "createdAt": "2026-08-17T13:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1018",
-      "subject": "Allow custom fields on the contact record",
-      "description": "We need to store an internal account code against each contact. Currently we are abusing the notes field.",
-      "requester": "Grace Mensah",
-      "priority": "P4",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-17T13:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1030",
-      "subject": "Search index stale after bulk import",
-      "description": "Imported records did not appear in search until the nightly reindex. Now reindexing per batch.",
-      "requester": "Bode Adekunle",
-      "priority": "P2",
-      "status": "resolved",
-      "assignee": "Tunde Bello",
-      "createdAt": "2026-08-17T07:00:00.000Z",
-      "resolvedAt": "2026-08-17T09:30:00.000Z",
-      "notes": [
-        {
-          "id": "n30-1",
-          "author": "Tunde Bello",
-          "body": "Root cause found -- fix in review.",
-          "createdAt": "2026-08-17T07:50:00.000Z"
-        },
-        {
-          "id": "n30-2",
-          "author": "Tunde Bello",
-          "body": "Deployed the fix, monitoring.",
-          "createdAt": "2026-08-17T08:40:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1019",
-      "subject": "Export the audit log to CSV",
-      "description": "Compliance asks for the audit log quarterly and we are copying it out of the UI by hand.",
-      "requester": "Ife Adeyemi",
-      "priority": "P4",
-      "status": "open",
-      "assignee": "Grace Mensah",
-      "createdAt": "2026-08-17T03:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1028",
-      "subject": "Password reset email is slow",
-      "description": "Reset emails were taking around twenty minutes. Traced to a backed-up mail queue.",
-      "requester": "Yaw Asante",
-      "priority": "P3",
-      "status": "resolved",
-      "assignee": "Ife Adeyemi",
-      "createdAt": "2026-08-17T03:00:00.000Z",
-      "resolvedAt": "2026-08-18T00:00:00.000Z",
-      "notes": [
-        {
-          "id": "n28-1",
-          "author": "Ife Adeyemi",
-          "body": "Escalated to the platform team.",
-          "createdAt": "2026-08-17T10:00:00.000Z"
-        },
-        {
-          "id": "n28-2",
-          "author": "Ife Adeyemi",
-          "body": "Workaround sent to the customer while we fix it properly.",
-          "createdAt": "2026-08-17T17:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1020",
-      "subject": "Keyboard shortcuts for the ticket list",
-      "description": "The support team would like j/k to move between tickets, as in their old tool.",
-      "requester": "Chidi Okafor",
-      "priority": "P4",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-16T21:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1027",
-      "subject": "Onboarding checklist never marks itself complete",
-      "description": "The final step stays unticked even after the action is done, so new accounts look stalled in our reporting.",
-      "requester": "Lerato Dlamini",
-      "priority": "P4",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-16T17:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1031",
-      "subject": "Customers cannot update their billing address",
-      "description": "The save button did nothing on the billing form. A validation rule was rejecting valid input silently.",
-      "requester": "Ada Nwosu",
-      "priority": "P1",
-      "status": "resolved",
-      "assignee": "Grace Mensah",
-      "createdAt": "2026-08-16T17:00:00.000Z",
-      "resolvedAt": "2026-08-16T17:36:00.000Z",
-      "notes": [
-        {
-          "id": "n31-1",
-          "author": "Grace Mensah",
-          "body": "Deployed the fix, monitoring.",
-          "createdAt": "2026-08-16T17:12:00.000Z"
-        },
-        {
-          "id": "n31-2",
-          "author": "Grace Mensah",
-          "body": "Confirmed resolved with the customer.",
-          "createdAt": "2026-08-16T17:24:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1021",
-      "subject": "Bulk edit tags on contacts",
-      "description": "Retagging after a campaign takes an afternoon because it has to be done one contact at a time.",
-      "requester": "Zainab Yusuf",
-      "priority": "P4",
-      "status": "in-progress",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-16T13:00:00.000Z",
-      "resolvedAt": null,
-      "notes": [
-        {
-          "id": "n21-1",
-          "author": "Ada Nwosu",
-          "body": "Workaround sent to the customer while we fix it properly.",
-          "createdAt": "2026-08-16T13:30:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1036",
-      "subject": "Customer data export contained another account's rows",
-      "description": "A filter was missing from the export query. Contained, the affected customer was notified, and a post-mortem is scheduled.",
-      "requester": "Zainab Yusuf",
-      "priority": "P1",
-      "status": "resolved",
-      "assignee": "Ife Adeyemi",
-      "createdAt": "2026-08-16T07:00:00.000Z",
-      "resolvedAt": "2026-08-16T13:00:00.000Z",
-      "notes": [
-        {
-          "id": "n36-1",
-          "author": "Ife Adeyemi",
-          "body": "Escalated to the platform team.",
-          "createdAt": "2026-08-16T09:00:00.000Z"
-        },
-        {
-          "id": "n36-2",
-          "author": "Ife Adeyemi",
-          "body": "Workaround sent to the customer while we fix it properly.",
-          "createdAt": "2026-08-16T11:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1022",
-      "subject": "Show the last login date on the user list",
-      "description": "Useful for spotting dormant accounts before the annual licence review.",
-      "requester": "Kwame Boateng",
-      "priority": "P4",
-      "status": "open",
-      "assignee": "Tunde Bello",
-      "createdAt": "2026-08-16T05:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1032",
-      "subject": "API returning 401 for valid keys",
-      "description": "Keys created in the last hour were rejected. Caused by a caching layer holding the old key list.",
-      "requester": "Tunde Bello",
-      "priority": "P1",
-      "status": "resolved",
-      "assignee": "Ife Adeyemi",
-      "createdAt": "2026-08-16T05:00:00.000Z",
-      "resolvedAt": "2026-08-16T05:45:00.000Z",
-      "notes": [
-        {
-          "id": "n32-1",
-          "author": "Ife Adeyemi",
-          "body": "Confirmed resolved with the customer.",
-          "createdAt": "2026-08-16T05:15:00.000Z"
-        },
-        {
-          "id": "n32-2",
-          "author": "Ife Adeyemi",
-          "body": "Reproduced on staging.",
-          "createdAt": "2026-08-16T05:30:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1023",
-      "subject": "Sandbox environment for integration testing",
-      "description": "Partners want somewhere to test against that is not production. Currently they test against live and we clean up.",
-      "requester": "Ngozi Eze",
-      "priority": "P4",
-      "status": "open",
-      "assignee": null,
-      "createdAt": "2026-08-15T21:00:00.000Z",
-      "resolvedAt": null,
-      "notes": []
-    },
-    {
-      "id": "TCK-1033",
-      "subject": "Weekly digest sent twice",
-      "description": "The digest job ran on both application servers. Now guarded by a lock.",
-      "requester": "Grace Mensah",
-      "priority": "P3",
-      "status": "resolved",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-15T21:00:00.000Z",
-      "resolvedAt": "2026-08-16T11:00:00.000Z",
-      "notes": [
-        {
-          "id": "n33-1",
-          "author": "Ada Nwosu",
-          "body": "Reproduced on staging.",
-          "createdAt": "2026-08-16T01:40:00.000Z"
-        },
-        {
-          "id": "n33-2",
-          "author": "Ada Nwosu",
-          "body": "Asked the customer for a screenshot.",
-          "createdAt": "2026-08-16T06:20:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1034",
-      "subject": "Contact import fails on accented characters",
-      "description": "Names with accents imported as question marks. The file was being read as ASCII rather than UTF-8.",
-      "requester": "Ife Adeyemi",
-      "priority": "P2",
-      "status": "resolved",
-      "assignee": "Tunde Bello",
-      "createdAt": "2026-08-15T15:00:00.000Z",
-      "resolvedAt": "2026-08-15T18:00:00.000Z",
-      "notes": [
-        {
-          "id": "n34-1",
-          "author": "Tunde Bello",
-          "body": "Asked the customer for a screenshot.",
-          "createdAt": "2026-08-15T16:00:00.000Z"
-        },
-        {
-          "id": "n34-2",
-          "author": "Tunde Bello",
-          "body": "Looks like a regression from the Friday deploy.",
-          "createdAt": "2026-08-15T17:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1029",
-      "subject": "Login page missing the company logo",
-      "description": "The logo disappeared from the login page after the CDN change.",
-      "requester": "Halima Sule",
-      "priority": "P4",
-      "status": "resolved",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-15T11:00:00.000Z",
-      "resolvedAt": "2026-08-16T17:00:00.000Z",
-      "notes": [
-        {
-          "id": "n29-1",
-          "author": "Ada Nwosu",
-          "body": "Workaround sent to the customer while we fix it properly.",
-          "createdAt": "2026-08-15T21:00:00.000Z"
-        },
-        {
-          "id": "n29-2",
-          "author": "Ada Nwosu",
-          "body": "Root cause found -- fix in review.",
-          "createdAt": "2026-08-16T07:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1037",
-      "subject": "Payment retries charged customers twice",
-      "description": "The retry job did not check for an existing successful charge. 14 duplicate charges, all refunded.",
-      "requester": "Kwame Boateng",
-      "priority": "P1",
-      "status": "resolved",
-      "assignee": "Ada Nwosu",
-      "createdAt": "2026-08-15T09:00:00.000Z",
-      "resolvedAt": "2026-08-15T18:00:00.000Z",
-      "notes": [
-        {
-          "id": "n37-1",
-          "author": "Ada Nwosu",
-          "body": "Workaround sent to the customer while we fix it properly.",
-          "createdAt": "2026-08-15T12:00:00.000Z"
-        },
-        {
-          "id": "n37-2",
-          "author": "Ada Nwosu",
-          "body": "Root cause found -- fix in review.",
-          "createdAt": "2026-08-15T15:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1035",
-      "subject": "Mobile layout broken on the settings page",
-      "description": "The settings form overflowed horizontally on phones narrower than 380px.",
-      "requester": "Chidi Okafor",
-      "priority": "P3",
-      "status": "resolved",
-      "assignee": "Grace Mensah",
-      "createdAt": "2026-08-15T01:00:00.000Z",
-      "resolvedAt": "2026-08-15T19:00:00.000Z",
-      "notes": [
-        {
-          "id": "n35-1",
-          "author": "Grace Mensah",
-          "body": "Looks like a regression from the Friday deploy.",
-          "createdAt": "2026-08-15T07:00:00.000Z"
-        },
-        {
-          "id": "n35-2",
-          "author": "Grace Mensah",
-          "body": "Escalated to the platform team.",
-          "createdAt": "2026-08-15T13:00:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1038",
-      "subject": "Status page did not update during the outage",
-      "description": "During Tuesday's incident the status page stayed green for 40 minutes.",
-      "requester": "Ngozi Eze",
-      "priority": "P2",
-      "status": "resolved",
-      "assignee": "Tunde Bello",
-      "createdAt": "2026-08-14T15:00:00.000Z",
-      "resolvedAt": "2026-08-15T17:00:00.000Z",
-      "notes": [
-        {
-          "id": "n38-1",
-          "author": "Tunde Bello",
-          "body": "Root cause found -- fix in review.",
-          "createdAt": "2026-08-14T23:40:00.000Z"
-        },
-        {
-          "id": "n38-2",
-          "author": "Tunde Bello",
-          "body": "Deployed the fix, monitoring.",
-          "createdAt": "2026-08-15T08:20:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1039",
-      "subject": "Support inbox rules stopped applying",
-      "description": "Incoming mail bypassed the routing rules for two days, so everything landed in the general queue.",
-      "requester": "Samuel Otieno",
-      "priority": "P3",
-      "status": "resolved",
-      "assignee": "Grace Mensah",
-      "createdAt": "2026-08-14T05:00:00.000Z",
-      "resolvedAt": "2026-08-16T12:00:00.000Z",
-      "notes": [
-        {
-          "id": "n39-1",
-          "author": "Grace Mensah",
-          "body": "Deployed the fix, monitoring.",
-          "createdAt": "2026-08-14T23:20:00.000Z"
-        },
-        {
-          "id": "n39-2",
-          "author": "Grace Mensah",
-          "body": "Confirmed resolved with the customer.",
-          "createdAt": "2026-08-15T17:40:00.000Z"
-        }
-      ]
-    },
-    {
-      "id": "TCK-1040",
-      "subject": "Trial accounts not expiring",
-      "description": "Trials created before the pricing change never expired. 60 accounts had indefinite free access.",
-      "requester": "Fatima Bala",
-      "priority": "P4",
-      "status": "resolved",
-      "assignee": "Ife Adeyemi",
-      "createdAt": "2026-08-12T13:00:00.000Z",
-      "resolvedAt": "2026-08-17T03:00:00.000Z",
-      "notes": [
-        {
-          "id": "n40-1",
-          "author": "Ife Adeyemi",
-          "body": "Confirmed resolved with the customer.",
-          "createdAt": "2026-08-14T01:40:00.000Z"
-        },
-        {
-          "id": "n40-2",
-          "author": "Ife Adeyemi",
-          "body": "Reproduced on staging.",
-          "createdAt": "2026-08-15T14:20:00.000Z"
-        }
-      ]
-    }
-  ]
+    "generatedAt":  "2026-08-18T09:00:00.000Z",
+    "team":  [
+                 "Ada Nwosu",
+                 "Tunde Bello",
+                 "Grace Mensah",
+                 "Ife Adeyemi"
+             ],
+    "tickets":  [
+                    {
+                        "id":  "TCK-1008",
+                        "subject":  "Two-factor codes arriving several minutes late",
+                        "description":  "Customers are receiving SMS two-factor authentication codes three to six minutes after requesting them, by which time the codes have already expired. Voice-call codes arrive immediately, which suggests the issue is isolated to the SMS delivery path. This prevents affected customers from completing sign-in without trying another verification method.",
+                        "requester":  "Ngozi Eze",
+                        "priority":  "P2",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-18T08:30:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1002",
+                        "subject":  "SSO login loop for the whole finance team",
+                        "description":  "The entire Finance team is unable to sign in because the identity provider sends users back to the login page in a continuous loop. The problem affects eleven people and blocks access to finance tools and records. Initial investigation should focus on the single sign-on redirect and session configuration.",
+                        "requester":  "Tunde Bello",
+                        "priority":  "P1",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-18T08:09:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1001",
+                        "subject":  "Checkout returns 500 on card payment",
+                        "description":  "Pro-plan customers receive a server error when they attempt to pay by card at checkout. The issue began after this morning\u0027s deployment and has already resulted in three refund requests. The payment flow should be treated as urgent because it prevents new purchases and upgrades.",
+                        "requester":  "Ada Nwosu",
+                        "priority":  "P1",
+                        "status":  "in-progress",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-18T07:36:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+                                      {
+                                          "id":  "n1-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Reproduced on staging.",
+                                          "createdAt":  "2026-08-18T08:06:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1015",
+                        "subject":  "Password reset link expires too quickly",
+                        "description":  "Password-reset links currently expire after five minutes, which is too short for customers who must switch to another device or wait for email delivery. Customers can begin the reset process successfully but are unable to finish it before the link expires. Extending the validity period would reduce repeat reset requests.",
+                        "requester":  "Bode Adekunle",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-18T07:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1024",
+                        "subject":  "Reports page times out for large accounts",
+                        "description":  "The reports page returns a gateway timeout for accounts with more than 50,000 records, while smaller accounts load in under one second. This points to a scale-related query or processing issue rather than a general availability problem. Large customers cannot access the reporting information they need.",
+                        "requester":  "Samuel Otieno",
+                        "priority":  "P2",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-18T06:24:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1004",
+                        "subject":  "Export to CSV drops the last row",
+                        "description":  "CSV exports containing more than 500 records consistently omit the final row. The problem was reproduced in staging with a 501-row export, confirming that the issue occurs at the record limit boundary. This creates a risk of incomplete customer data being used outside the application.",
+                        "requester":  "Ife Adeyemi",
+                        "priority":  "P2",
+                        "status":  "open",
+                        "assignee":  "Ife Adeyemi",
+                        "createdAt":  "2026-08-18T05:48:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1005",
+                        "subject":  "Search returns no results for hyphenated names",
+                        "description":  "Searches for hyphenated names such as \u0027Ade-Kunle\u0027 return no results, while the same name without a hyphen works correctly. The issue affects approximately four percent of customer records and makes some contacts difficult to find. Search normalisation should be reviewed so punctuation does not change matching behaviour.",
+                        "requester":  "Chidi Okafor",
+                        "priority":  "P2",
+                        "status":  "in-progress",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-18T05:36:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+                                      {
+                                          "id":  "n5-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Workaround sent to the customer while we fix it properly.",
+                                          "createdAt":  "2026-08-18T06:06:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1009",
+                        "subject":  "Dashboard chart is empty on first load",
+                        "description":  "The dashboard revenue chart appears blank on its first load even though the underlying data is available. Changing the date range causes the chart to render, but refreshing the page does not resolve the problem. This suggests that the initial chart render is not receiving or reacting to its default data correctly.",
+                        "requester":  "Samuel Otieno",
+                        "priority":  "P3",
+                        "status":  "in-progress",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-18T05:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+                                      {
+                                          "id":  "n9-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Reproduced on staging.",
+                                          "createdAt":  "2026-08-18T05:30:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1003",
+                        "subject":  "Webhook deliveries silently dropped since 06:00",
+                        "description":  "Partner integrations are reporting that they receive no webhook events, while the internal dashboard records the deliveries as successful. The discrepancy indicates that the failure may occur after the application sends the event. This can leave partners with stale data and no reliable indication that a delivery failed.",
+                        "requester":  "Grace Mensah",
+                        "priority":  "P2",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-18T04:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1010",
+                        "subject":  "Bulk import rejects valid postcodes",
+                        "description":  "Bulk imports reject otherwise valid postcodes whenever the postcode contains a space. The same records import successfully after the space is removed, which points to overly strict validation. Customers must manually edit legitimate address data before importing it.",
+                        "requester":  "Fatima Bala",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  "Tunde Bello",
+                        "createdAt":  "2026-08-18T02:30:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1011",
+                        "subject":  "Timezone wrong on scheduled reports",
+                        "description":  "Reports scheduled for 09:00 are delivered at 10:00 for customers in Lagos. The one-hour difference suggests that the scheduler may be using UTC instead of the customer\u0027s configured timezone. This affects the reliability of scheduled reporting for users in that region.",
+                        "requester":  "Emeka Obi",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-18T01:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1016",
+                        "subject":  "Duplicate confirmation emails on signup",
+                        "description":  "New users on the self-service signup path receive the welcome email twice, usually about thirty seconds apart. The duplicate message does not occur on other signup paths, which narrows the likely source of the problem. Repeated emails can confuse customers and increase unnecessary mail volume.",
+                        "requester":  "Ada Nwosu",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  "Ife Adeyemi",
+                        "createdAt":  "2026-08-18T00:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1012",
+                        "subject":  "API rate limit headers missing",
+                        "description":  "The API documentation promises an X-RateLimit-Remaining response header, but current API responses do not include it. Without this information, API clients cannot accurately slow down before reaching their limit. The implementation and documentation need to be brought back into agreement.",
+                        "requester":  "Lerato Dlamini",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-17T22:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1013",
+                        "subject":  "Cannot remove a user from a workspace",
+                        "description":  "Workspace administrators cannot remove users who were invited but never completed sign-in because the Remove button is disabled. These pending users remain visible even when they should no longer have access. The permission and invitation-state logic for the removal action should be checked.",
+                        "requester":  "Yaw Asante",
+                        "priority":  "P3",
+                        "status":  "in-progress",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-17T20:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+                                      {
+                                          "id":  "n13-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Workaround sent to the customer while we fix it properly.",
+                                          "createdAt":  "2026-08-17T20:30:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1017",
+                        "subject":  "Add a dark theme to the dashboard",
+                        "description":  "Several customers, especially overnight support teams, have requested a dark theme for the dashboard. The current bright interface can be uncomfortable during extended evening use. A dark theme would be an accessibility and usability improvement rather than an incident fix.",
+                        "requester":  "Tunde Bello",
+                        "priority":  "P4",
+                        "status":  "in-progress",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-17T19:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+                                      {
+                                          "id":  "n17-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Reproduced on staging.",
+                                          "createdAt":  "2026-08-17T19:30:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1014",
+                        "subject":  "Attachments over 10MB fail without a message",
+                        "description":  "Uploads larger than 10 MB leave the interface on a loading spinner indefinitely. No error message is shown to the user and no useful error appears in the browser console. Customers do not know that the upload has failed or what they need to do next.",
+                        "requester":  "Halima Sule",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-17T18:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1025",
+                        "subject":  "Saved filters disappear after logging out",
+                        "description":  "Saved filters are stored in the browser session instead of the customer\u0027s account. As a result, filters disappear after sign-out and are not available when the user returns. Preferences should be persisted against the account so they work across sessions and devices.",
+                        "requester":  "Fatima Bala",
+                        "priority":  "P3",
+                        "status":  "in-progress",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-17T17:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+                                      {
+                                          "id":  "n25-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Reproduced on staging.",
+                                          "createdAt":  "2026-08-17T17:30:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1026",
+                        "subject":  "Slack integration posts to the wrong channel",
+                        "description":  "After a Slack channel is renamed, integration notifications continue to post to the previous channel ID. This means the saved integration target is not updated or revalidated after the rename. Teams can miss important notifications because messages appear in the wrong place.",
+                        "requester":  "Emeka Obi",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-17T15:30:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1006",
+                        "subject":  "Invoice PDF shows the wrong VAT total",
+                        "description":  "Invoice line items display correctly, but the final VAT total is calculated before a discount is applied. The resulting total is therefore incorrect even though the individual amounts look valid. This affects billing accuracy and should be corrected before more invoices are generated.",
+                        "requester":  "Zainab Yusuf",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-17T13:30:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1007",
+                        "subject":  "Mobile app crashes when opening notifications",
+                        "description":  "The Android mobile app crashes when users open notifications created before the data migration. Crash logs point to a missing notification title, while newer notifications work normally. The notification screen needs to handle older records that do not contain every current field.",
+                        "requester":  "Kwame Boateng",
+                        "priority":  "P3",
+                        "status":  "open",
+                        "assignee":  "Grace Mensah",
+                        "createdAt":  "2026-08-17T13:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1018",
+                        "subject":  "Allow custom fields on the contact record",
+                        "description":  "Customers need an internal account code field on each contact record, but the product currently has no structured place to store it. Teams are placing this information in the notes field, making it difficult to search and maintain. A custom-field capability would provide a more reliable solution.",
+                        "requester":  "Grace Mensah",
+                        "priority":  "P4",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-17T13:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1030",
+                        "subject":  "Search index stale after bulk import",
+                        "description":  "Records imported in bulk were not searchable until the nightly reindex completed. The system now reindexes each batch, but the ticket documents the previous delay and the fix. Faster indexing is important so imported records are available immediately after a successful upload.",
+                        "requester":  "Bode Adekunle",
+                        "priority":  "P2",
+                        "status":  "resolved",
+                        "assignee":  "Tunde Bello",
+                        "createdAt":  "2026-08-17T07:00:00.000Z",
+                        "resolvedAt":  "2026-08-17T09:30:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n30-1",
+                                          "author":  "Tunde Bello",
+                                          "body":  "Root cause found -- fix in review.",
+                                          "createdAt":  "2026-08-17T07:50:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n30-2",
+                                          "author":  "Tunde Bello",
+                                          "body":  "Deployed the fix, monitoring.",
+                                          "createdAt":  "2026-08-17T08:40:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1019",
+                        "subject":  "Export the audit log to CSV",
+                        "description":  "Compliance teams need to export the audit log every quarter, but the current process requires copying information manually from the interface. This is slow, error-prone, and difficult to repeat consistently. A CSV export would make the process auditable and much more efficient.",
+                        "requester":  "Ife Adeyemi",
+                        "priority":  "P4",
+                        "status":  "open",
+                        "assignee":  "Grace Mensah",
+                        "createdAt":  "2026-08-17T03:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1028",
+                        "subject":  "Password reset email is slow",
+                        "description":  "Password-reset emails were taking around twenty minutes to arrive because the outbound mail queue was backed up. Delayed delivery prevented customers from quickly regaining access to their accounts. The issue has been traced to the queue, but delivery performance should continue to be monitored.",
+                        "requester":  "Yaw Asante",
+                        "priority":  "P3",
+                        "status":  "resolved",
+                        "assignee":  "Ife Adeyemi",
+                        "createdAt":  "2026-08-17T03:00:00.000Z",
+                        "resolvedAt":  "2026-08-18T00:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n28-1",
+                                          "author":  "Ife Adeyemi",
+                                          "body":  "Escalated to the platform team.",
+                                          "createdAt":  "2026-08-17T10:00:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n28-2",
+                                          "author":  "Ife Adeyemi",
+                                          "body":  "Workaround sent to the customer while we fix it properly.",
+                                          "createdAt":  "2026-08-17T17:00:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1020",
+                        "subject":  "Keyboard shortcuts for the ticket list",
+                        "description":  "The support team has requested keyboard shortcuts, such as j and k, to move through tickets in the queue. Their previous tool supported this interaction and the team relies on it for faster keyboard-based work. Adding shortcuts would improve navigation efficiency for frequent users.",
+                        "requester":  "Chidi Okafor",
+                        "priority":  "P4",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-16T21:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1027",
+                        "subject":  "Onboarding checklist never marks itself complete",
+                        "description":  "The final step in the onboarding checklist remains unchecked even after the required action has been completed. This makes new accounts appear stalled in reporting and can prompt unnecessary follow-up. The completion event is likely not being saved or reflected in the checklist state.",
+                        "requester":  "Lerato Dlamini",
+                        "priority":  "P4",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-16T17:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1031",
+                        "subject":  "Customers cannot update their billing address",
+                        "description":  "The Save button on the billing-address form appeared to do nothing because a validation rule silently rejected valid input. Customers were unable to update their billing information and received no explanation. Validation failures should be surfaced clearly so users can correct the form.",
+                        "requester":  "Ada Nwosu",
+                        "priority":  "P1",
+                        "status":  "resolved",
+                        "assignee":  "Grace Mensah",
+                        "createdAt":  "2026-08-16T17:00:00.000Z",
+                        "resolvedAt":  "2026-08-16T17:36:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n31-1",
+                                          "author":  "Grace Mensah",
+                                          "body":  "Deployed the fix, monitoring.",
+                                          "createdAt":  "2026-08-16T17:12:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n31-2",
+                                          "author":  "Grace Mensah",
+                                          "body":  "Confirmed resolved with the customer.",
+                                          "createdAt":  "2026-08-16T17:24:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1021",
+                        "subject":  "Bulk edit tags on contacts",
+                        "description":  "Teams must currently retag contacts one at a time after a campaign, turning a routine task into an afternoon of manual work. There is no way to select a set of contacts and apply tags in bulk. Bulk editing would reduce repetitive work and lower the chance of inconsistent tagging.",
+                        "requester":  "Zainab Yusuf",
+                        "priority":  "P4",
+                        "status":  "in-progress",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-16T13:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+                                      {
+                                          "id":  "n21-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Workaround sent to the customer while we fix it properly.",
+                                          "createdAt":  "2026-08-16T13:30:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1036",
+                        "subject":  "Customer data export contained another account\u0027s rows",
+                        "description":  "A missing filter in the customer-data export query caused one account\u0027s export to include rows belonging to another account. The incident was contained, the affected customer was notified, and a post-mortem has been scheduled. This is a serious data-isolation issue that requires prevention measures and verification.",
+                        "requester":  "Zainab Yusuf",
+                        "priority":  "P1",
+                        "status":  "resolved",
+                        "assignee":  "Ife Adeyemi",
+                        "createdAt":  "2026-08-16T07:00:00.000Z",
+                        "resolvedAt":  "2026-08-16T13:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n36-1",
+                                          "author":  "Ife Adeyemi",
+                                          "body":  "Escalated to the platform team.",
+                                          "createdAt":  "2026-08-16T09:00:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n36-2",
+                                          "author":  "Ife Adeyemi",
+                                          "body":  "Workaround sent to the customer while we fix it properly.",
+                                          "createdAt":  "2026-08-16T11:00:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1022",
+                        "subject":  "Show the last login date on the user list",
+                        "description":  "Support teams need the last login date on the user list to identify dormant accounts before the annual licence review. The information exists elsewhere but is not visible where the review takes place. Showing it in the list would make account-cleanup decisions faster and more reliable.",
+                        "requester":  "Kwame Boateng",
+                        "priority":  "P4",
+                        "status":  "open",
+                        "assignee":  "Tunde Bello",
+                        "createdAt":  "2026-08-16T05:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1032",
+                        "subject":  "API returning 401 for valid keys",
+                        "description":  "API keys created within the previous hour were rejected with 401 responses even though they were valid. A caching layer was holding an outdated list of keys and did not recognise newly created ones. This prevented integrations from being configured immediately after key creation.",
+                        "requester":  "Tunde Bello",
+                        "priority":  "P1",
+                        "status":  "resolved",
+                        "assignee":  "Ife Adeyemi",
+                        "createdAt":  "2026-08-16T05:00:00.000Z",
+                        "resolvedAt":  "2026-08-16T05:45:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n32-1",
+                                          "author":  "Ife Adeyemi",
+                                          "body":  "Confirmed resolved with the customer.",
+                                          "createdAt":  "2026-08-16T05:15:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n32-2",
+                                          "author":  "Ife Adeyemi",
+                                          "body":  "Reproduced on staging.",
+                                          "createdAt":  "2026-08-16T05:30:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1023",
+                        "subject":  "Sandbox environment for integration testing",
+                        "description":  "Integration partners want a dedicated sandbox environment where they can test safely without affecting production data. At the moment they test against the live system and the team must clean up the resulting records. A sandbox would reduce operational risk and make partner testing more practical.",
+                        "requester":  "Ngozi Eze",
+                        "priority":  "P4",
+                        "status":  "open",
+                        "assignee":  null,
+                        "createdAt":  "2026-08-15T21:00:00.000Z",
+                        "resolvedAt":  null,
+                        "notes":  [
+
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1033",
+                        "subject":  "Weekly digest sent twice",
+                        "description":  "The weekly digest email was sent twice because the scheduled job ran on both application servers. A lock now guards the job, but the ticket records the duplicate-send incident. Job coordination should be monitored to ensure only one server performs each scheduled run.",
+                        "requester":  "Grace Mensah",
+                        "priority":  "P3",
+                        "status":  "resolved",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-15T21:00:00.000Z",
+                        "resolvedAt":  "2026-08-16T11:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n33-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Reproduced on staging.",
+                                          "createdAt":  "2026-08-16T01:40:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n33-2",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Asked the customer for a screenshot.",
+                                          "createdAt":  "2026-08-16T06:20:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1034",
+                        "subject":  "Contact import fails on accented characters",
+                        "description":  "Contact names containing accented characters were imported as question marks because files were read as ASCII instead of UTF-8. This corrupted customer names during import and reduced data quality. The importer must consistently detect or require UTF-8 encoding.",
+                        "requester":  "Ife Adeyemi",
+                        "priority":  "P2",
+                        "status":  "resolved",
+                        "assignee":  "Tunde Bello",
+                        "createdAt":  "2026-08-15T15:00:00.000Z",
+                        "resolvedAt":  "2026-08-15T18:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n34-1",
+                                          "author":  "Tunde Bello",
+                                          "body":  "Asked the customer for a screenshot.",
+                                          "createdAt":  "2026-08-15T16:00:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n34-2",
+                                          "author":  "Tunde Bello",
+                                          "body":  "Looks like a regression from the Friday deploy.",
+                                          "createdAt":  "2026-08-15T17:00:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1029",
+                        "subject":  "Login page missing the company logo",
+                        "description":  "The company logo disappeared from the login page after a CDN configuration change. The rest of the page remained available, but the missing logo made the sign-in experience appear incomplete and less trustworthy. The affected asset path and CDN cache configuration should be reviewed.",
+                        "requester":  "Halima Sule",
+                        "priority":  "P4",
+                        "status":  "resolved",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-15T11:00:00.000Z",
+                        "resolvedAt":  "2026-08-16T17:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n29-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Workaround sent to the customer while we fix it properly.",
+                                          "createdAt":  "2026-08-15T21:00:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n29-2",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Root cause found -- fix in review.",
+                                          "createdAt":  "2026-08-16T07:00:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1037",
+                        "subject":  "Payment retries charged customers twice",
+                        "description":  "The payment retry job charged some customers twice because it did not verify that an earlier attempt had already succeeded. Fourteen duplicate charges were identified and refunded. Retry processing needs an idempotency check so a successful payment can never be charged again.",
+                        "requester":  "Kwame Boateng",
+                        "priority":  "P1",
+                        "status":  "resolved",
+                        "assignee":  "Ada Nwosu",
+                        "createdAt":  "2026-08-15T09:00:00.000Z",
+                        "resolvedAt":  "2026-08-15T18:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n37-1",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Workaround sent to the customer while we fix it properly.",
+                                          "createdAt":  "2026-08-15T12:00:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n37-2",
+                                          "author":  "Ada Nwosu",
+                                          "body":  "Root cause found -- fix in review.",
+                                          "createdAt":  "2026-08-15T15:00:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1035",
+                        "subject":  "Mobile layout broken on the settings page",
+                        "description":  "The settings form overflowed horizontally on phones narrower than 380 pixels. Users had to scroll sideways to access parts of the form, making configuration difficult on smaller devices. The responsive layout needs to constrain fields and controls within the viewport.",
+                        "requester":  "Chidi Okafor",
+                        "priority":  "P3",
+                        "status":  "resolved",
+                        "assignee":  "Grace Mensah",
+                        "createdAt":  "2026-08-15T01:00:00.000Z",
+                        "resolvedAt":  "2026-08-15T19:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n35-1",
+                                          "author":  "Grace Mensah",
+                                          "body":  "Looks like a regression from the Friday deploy.",
+                                          "createdAt":  "2026-08-15T07:00:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n35-2",
+                                          "author":  "Grace Mensah",
+                                          "body":  "Escalated to the platform team.",
+                                          "createdAt":  "2026-08-15T13:00:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1038",
+                        "subject":  "Status page did not update during the outage",
+                        "description":  "During Tuesday\u0027s outage, the public status page remained green for forty minutes instead of reflecting the incident. Customers had no timely indication that the service was experiencing a problem. The incident-to-status-page update process needs better automation or escalation.",
+                        "requester":  "Ngozi Eze",
+                        "priority":  "P2",
+                        "status":  "resolved",
+                        "assignee":  "Tunde Bello",
+                        "createdAt":  "2026-08-14T15:00:00.000Z",
+                        "resolvedAt":  "2026-08-15T17:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n38-1",
+                                          "author":  "Tunde Bello",
+                                          "body":  "Root cause found -- fix in review.",
+                                          "createdAt":  "2026-08-14T23:40:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n38-2",
+                                          "author":  "Tunde Bello",
+                                          "body":  "Deployed the fix, monitoring.",
+                                          "createdAt":  "2026-08-15T08:20:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1039",
+                        "subject":  "Support inbox rules stopped applying",
+                        "description":  "Incoming support email bypassed routing rules for two days and landed in the general queue instead of the appropriate teams. This delayed handling and made ownership unclear for affected conversations. The inbox-rule processing path should be investigated and monitored for future failures.",
+                        "requester":  "Samuel Otieno",
+                        "priority":  "P3",
+                        "status":  "resolved",
+                        "assignee":  "Grace Mensah",
+                        "createdAt":  "2026-08-14T05:00:00.000Z",
+                        "resolvedAt":  "2026-08-16T12:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n39-1",
+                                          "author":  "Grace Mensah",
+                                          "body":  "Deployed the fix, monitoring.",
+                                          "createdAt":  "2026-08-14T23:20:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n39-2",
+                                          "author":  "Grace Mensah",
+                                          "body":  "Confirmed resolved with the customer.",
+                                          "createdAt":  "2026-08-15T17:40:00.000Z"
+                                      }
+                                  ]
+                    },
+                    {
+                        "id":  "TCK-1040",
+                        "subject":  "Trial accounts not expiring",
+                        "description":  "Trial accounts created before the pricing change did not expire as expected, leaving sixty accounts with indefinite free access. The issue is linked to legacy trial rules that were not updated during the pricing change. Expiry logic should be corrected and existing affected accounts reviewed.",
+                        "requester":  "Fatima Bala",
+                        "priority":  "P4",
+                        "status":  "resolved",
+                        "assignee":  "Ife Adeyemi",
+                        "createdAt":  "2026-08-12T13:00:00.000Z",
+                        "resolvedAt":  "2026-08-17T03:00:00.000Z",
+                        "notes":  [
+                                      {
+                                          "id":  "n40-1",
+                                          "author":  "Ife Adeyemi",
+                                          "body":  "Confirmed resolved with the customer.",
+                                          "createdAt":  "2026-08-14T01:40:00.000Z"
+                                      },
+                                      {
+                                          "id":  "n40-2",
+                                          "author":  "Ife Adeyemi",
+                                          "body":  "Reproduced on staging.",
+                                          "createdAt":  "2026-08-15T14:20:00.000Z"
+                                      }
+                                  ]
+                    }
+                ]
 }
